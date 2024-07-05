@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 const dotenv=require("dotenv");
-const { log } = require("console");
+
 
 dotenv.config();
 
@@ -13,8 +13,6 @@ try{
         })
 }catch(err){
  console.log(err)
-}
-
-}
+}}
 
 module.exports =connectDB
