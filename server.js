@@ -6,6 +6,9 @@ const hotelRouter=require("./routes/hotelrouter");
 const hoteldataAddedToDBRouter=require("./routes/dataimport.router");
 const categorydataAddedToDBRouter=require("./routes/categoryimport.router");
 const categoryRouter=require("./routes/category.router")
+const singleHotelRouter=require("./routes/singlehotel.router")
+const authrouter=require("./routes/auth.router")
+
 
 const connectDB=require("./config/dbconfig");
 const app= express();
@@ -23,6 +26,8 @@ app.use("/api/hoteldata",hoteldataAddedToDBRouter);
 app.use("/api/categorydata",categorydataAddedToDBRouter);
 app.use("/api/hotels",hotelRouter)
 app.use("/api/categories",categoryRouter)
+app.use("/api/hotel",singleHotelRouter)
+app.use("/api/auth",authrouter)
 
 
 app.listen(process.env.PORT || PORT,()=>{
