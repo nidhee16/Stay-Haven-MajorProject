@@ -8,7 +8,7 @@ const categorydataAddedToDBRouter=require("./routes/categoryimport.router");
 const categoryRouter=require("./routes/category.router")
 const singleHotelRouter=require("./routes/singlehotel.router")
 const authrouter=require("./routes/auth.router")
-
+const wishlistRouter=require("./routes/wishlist.router")
 
 const connectDB=require("./config/dbconfig");
 const app= express();
@@ -28,7 +28,7 @@ app.use("/api/hotels",hotelRouter)
 app.use("/api/categories",categoryRouter)
 app.use("/api/hotel",singleHotelRouter)
 app.use("/api/auth",authrouter)
-
+app.use("/api/wishlist",wishlistRouter)
 
 app.listen(process.env.PORT || PORT,()=>{
     mongoose.connection.once("open",()=>{
